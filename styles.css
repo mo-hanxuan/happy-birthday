@@ -23,7 +23,7 @@ body {
 .birthday-title {
     font-size: 3rem;
     color: #ff4081;
-    margin-bottom: 2rem;
+    margin-bottom: 8rem; /* 将2rem增加到4rem，增加标题下方的空间 */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     animation: pulse 2s infinite;
 }
@@ -38,6 +38,7 @@ body {
 .cake-container {
     height: 300px;
     position: relative;
+    margin-top: 60px; /* 添加顶部边距，使蛋糕整体下移 */
 }
 
 .cake {
