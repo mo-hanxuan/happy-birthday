@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    z-index: 1;
+}
+
+.birthday-title {
+    font-size: 3rem;
+    color: #ff4081;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite;
+}
+
+.message {
+    font-size: 1.5rem;
+    color: #6d48e5;
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.cake-container {
+    height: 300px;
+    position: relative;
+}
+
+.cake {
+    position: relative;
+    width: 250px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.cake-top {
+    position: absolute;
+    width: 240px;
+    height: 70px;
+    background: #ff6b81;
+    border-radius: 50% 50% 0 0;
+    top: 0;
+    left: 5px;
+    z-index: 2;
+}
+
+.cake-middle {
+    position: absolute;
+    width: 240px;
+    height: 70px;
+    background: #ff9eb5;
+    top: 50px;
+    left: 5px;
+    z-index: 1;
+}
+
+.cake-bottom {
+    position: absolute;
+    width: 250px;
+    height: 80px;
+    background: #ffb8c9;
+    border-radius: 0 0 15px 15px;
+    top: 110px;
+    left: 0;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.candle {
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    background: linear-gradient(to right, #ffeb3b, #fdd835);
+    top: -50px;
+    left: 115px;
+    z-index: 3;
+    border-radius: 10px;
+}
+
+.flame {
+    position: absolute;
+    width: 15px;
+    height: 30px;
+    background: linear-gradient(to bottom, #ff5722, #ff9800);
+    border-radius: 50% 50% 20% 20%;
+    top: -25px;
+    left: 2.5px;
+    animation: flicker 0.8s infinite alternate;
+    transform-origin: bottom;
+    box-shadow: 0 0 20px #ff9800, 0 0 30px #ff5722;
+}
+
+#fireworks-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes flicker {
+    0% {
+        transform: scaleY(1) rotate(-2deg);
+        opacity: 0.8;
+    }
+    25% {
+        transform: scaleY(1.1) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scaleY(0.9) rotate(2deg);
+        opacity: 0.9;
+    }
+    75% {
+        transform: scaleY(1.05) rotate(-1deg);
+        opacity: 0.95;
+    }
+    100% {
+        transform: scaleY(1) rotate(1deg);
+        opacity: 0.9;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
